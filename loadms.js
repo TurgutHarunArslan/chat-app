@@ -48,7 +48,7 @@ import {ref, set, get, child, getDatabase } from "https://www.gstatic.com/fireba
       });
     };
     */
-
+    window.onload = function(){
     const dbRef = ref(getDatabase());
     get(child(dbRef, '/messages')).then((snapshot) => {
       if (snapshot.exists()) {
@@ -58,7 +58,7 @@ import {ref, set, get, child, getDatabase } from "https://www.gstatic.com/fireba
             let valz =  Object.values(data)[i];
             Object.values(valz)[0];
     
-            if(Object.values(valz)[1] == 'nazan'){
+            if(Object.values(valz)[2] == 'nazan'){
              var div = document.createElement('div');
              var p = document.createElement('p');
              var img = document.createElement('img');
@@ -73,7 +73,7 @@ import {ref, set, get, child, getDatabase } from "https://www.gstatic.com/fireba
                     div.appendChild(p);
                     div.appendChild(img);
                     
-            }else if(Object.values(valz)[1] == 'turgut'){
+            }else if(Object.values(valz)[2] == 'turgut'){
               var div = document.createElement('div');
               var p = document.createElement('p');
               var img = document.createElement('img');
@@ -96,3 +96,4 @@ import {ref, set, get, child, getDatabase } from "https://www.gstatic.com/fireba
     }).catch((error) => {
       console.error(error);
     });
+  };

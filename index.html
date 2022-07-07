@@ -23,8 +23,9 @@ p{
 <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js" type="module"></script>
 </head>
 <body>
-    <div style="position: relative; position: sticky; margin-left: 40%;">
-    <input id="tweet" style="height:60px; display: flex; width: 250px;"></input> <button id="TweetButton" style="margin-left:125px;  margin-bottom: 20px;">Gönder</button>
+    <div style="margin-left: 40%;   position: -webkit-sticky; position: sticky;  top: 0;">
+    <textarea id="tweet" style="height:60px; display: inline-flex; width: 250px; resize: none;"></textarea>
+    <button id="TweetButton" style="  margin-bottom: 50px; position: absolute; padding: 24px;">Gönder</button>
 </div>
 
 
@@ -32,7 +33,7 @@ p{
 
 
 
-
+<script src="loadms.js" type="module"></script>
 <script src="main.js" type="module"></script>
 </body>
 </html>

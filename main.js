@@ -1,22 +1,19 @@
 import {database} from "./firebase.js";
-import {ref, set,  get } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js";
+import {ref, onValue, set, getDatabase, query, limitToLast} from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js";
 let randomnum = Math. floor((Math. random() * 1000000) + 1);
-let mess = document.getElementsByTagName('div');
+const db = getDatabase();
 const txt = document.getElementById('tweet');
 const btn = document.getElementById('TweetButton');
-
 let name = prompt("What is your name?").toLocaleLowerCase();
+
 if(name==='turgut' || name === 'nazan'){
-let src = document.createElement('script');
-src.src ='loadms.js';
-src.type = 'module';
-document.getElementsByTagName('body')[0].appendChild(src);
 }else{
 window.close()
 }
 
 btn.onclick = function(){
-  
+  const d = new Date();
+let time = d.getTime();
 if(name == 'turgut'){
 let txtv = txt.value;
 var message = txt.value;
@@ -53,19 +50,19 @@ var img = document.createElement('img');
        div.appendChild(p);
        div.appendChild(img);
       }
-
- writeUserData(name, message);
+ writeUserData(name, message, time);
       
     }
-    function writeUserData(name, message) {
-      set(ref(database, 'messages/' + message + randomnum), {
+    function writeUserData(name, message, time) {
+      set(ref(database, 'messages/' + time), {
         username: name,
-        messages: message
+        messages: message,
+        time: time
       });
     }
 
 /*
-    const starCountRef = ref(database, 'messages/');
+    const starCountRef =   const getMessages = query(ref(database, 'messages'), limitToLast(1));
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       console.log(data)
@@ -82,17 +79,15 @@ var img = document.createElement('img');
              document.getElementsByTagName('body')[0].appendChild(div);
              div.appendChild(p);
              div.appendChild(img);
+              const starCountRef = ref(database, 'messages/' );
 */
+ 
+ const starCountRef = query(ref(database, 'messages'), limitToLast(1));
+  onValue(starCountRef, (snapshot) => {
+    let data = snapshot.val();
+    let dataz =   Object.values(data)[0];
 
-const starCountRef = ref(database, 'messages/' );
-get(starCountRef, (snapshot) => {
-  let data = snapshot.val();
-
-
-    let valz =  Object.values(data)[0 + mess.length];
-    Object.values(valz)[0];
-
-    if(Object.values(valz)[1] == 'nazan'){
+    if(Object.values(dataz)[2] == 'nazan' && name !== 'nazan'){
      var div = document.createElement('div');
      var p = document.createElement('p');
      var img = document.createElement('img');
@@ -102,12 +97,12 @@ get(starCountRef, (snapshot) => {
             img.style = 'width:60px; height: 60px;';
             p.style = 'margin-left:10px; margin-top: 20px;  background-color: rgba(4, 195, 253, 0.801) !important; font-weight: bold; border-radius: 20px; text-align: center;';
              img.src = 'prof2.webp';
-             p.textContent =   Object.values(valz)[0];
+             p.textContent =   Object.values(dataz)[0];
             document.getElementsByTagName('body')[0].appendChild(div);
             div.appendChild(p);
             div.appendChild(img);
             
-    }else if(Object.values(valz)[1] == 'turgut'){
+}else if(Object.values(dataz)[2] == 'turgut' && name !== 'turgut'){
       var div = document.createElement('div');
       var p = document.createElement('p');
       var img = document.createElement('img');
@@ -118,9 +113,10 @@ get(starCountRef, (snapshot) => {
              p.style = 'margin-left:10px; margin-top: 20px;  background-color: rgb(15, 235, 15) !important; font-weight: bold; border-radius: 20px; text-align: center;';
               img.src = 'prof.png';
     
-              p.textContent =   Object.values(valz)[0];
+              p.textContent =   Object.values(dataz)[0];
              document.getElementsByTagName('body')[0].appendChild(div);
              div.appendChild(img);
              div.appendChild(p);
-           }
+           } 
    });
+   
