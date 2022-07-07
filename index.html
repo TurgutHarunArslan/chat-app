@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chatting Platform</title>
 <script src="firebase.js" type="module"></script>
+<link rel="stylesheet" href="style.css">
     <style>
 body{
 margin: 0;
@@ -26,12 +27,19 @@ p{
     <div style="margin-left: 40%;   position: -webkit-sticky; position: sticky;  top: 0;">
     <textarea id="tweet" style="height:60px; display: inline-flex; width: 250px; resize: none;"></textarea>
     <button id="TweetButton" style="  margin-bottom: 50px; position: absolute; padding: 24px;">Gönder</button>
+    <button id="ColorChange" style=" margin-bottom: 50px; position: absolute; padding: 24px; margin-left: 96px;" onclick="getRandomColor()">Change Color</button>
 </div>
 
 
-        
 
 
+<!-- 
+ <div class="container">
+    <span>Name</span>
+  <img src="prof.png" alt="Avatar" style="width:100%;">
+  <p>Hello. How are you today?</p>
+  <span class="time-right">11:00</span>
+</div>  -->
 
 <script src="loadms.js" type="module"></script>
 <script src="main.js" type="module"></script>
