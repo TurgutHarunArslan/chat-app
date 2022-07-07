@@ -88,7 +88,7 @@ var p = document.createElement('p');
      div.appendChild(img);
      div.appendChild(p);
             
-}else if(Object.values(dataz)[2] !== 'turgut' && name !== 'turgut'){
+}else if(Object.values(dataz)[2] == 'turgut' && name !== 'turgut'){
   var div = document.createElement('div');
 var span = document.createElement('span');
 var img = document.createElement('img');
