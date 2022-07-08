@@ -4,31 +4,19 @@ let randomnum = Math. floor((Math. random() * 1000000) + 1);
 const db = getDatabase();
 const txt = document.getElementById('tweet');
 const btn = document.getElementById('TweetButton');
-let change = document.getElementById('ColorChange');
+ let submit = document.querySelector('.signupbtn');
+let name = document.getElementById('name');
 
-
-   
-change.onclick = function() {
-  var color = 'rgb(' + 
-  (Math.floor(Math.random()*56)+200) + ', ' +
-  (Math.floor(Math.random()*56)+200) + ', ' +
-  (Math.floor(Math.random()*56)+200) +
-  ')';
-  return color;
+submit.onclick = function(event) {
+  event.preventDefault();
+name = name.value;
+document.querySelector('form').style.display = 'none';
+document.getElementById('idst').remove();
 }
 
-   let name = prompt("What is your name?").toLocaleLowerCase();
-
-if(name==='turgut' || name === 'nazan'){
-}else{
-window.close()
-}
-
-
-btn.onclick = function(color){
+btn.onclick = function(){
 const d = new Date();
 let time = d.getTime();
-if(name == 'turgut' || name == 'nazan'){
   let txtv = txt.value;
   var message = txt.value;
 
@@ -37,6 +25,7 @@ var span = document.createElement('span');
 var img = document.createElement('img');
 var p = document.createElement('p');
 div.classList.add('container');
+div.classList.add('egg');
   img.src = 'prof.png';
   span.textContent = name;
   p.textContent = txtv;
@@ -44,7 +33,7 @@ div.classList.add('container');
  div.appendChild(span);
  div.appendChild(img);
  div.appendChild(p);
-      }
+      
  writeUserData(name, message, time);
       
     }
@@ -69,18 +58,18 @@ div.classList.add('container');
 
   onValue(GetMessage, (snapshot) => {
     let data = snapshot.val();
-    console.log(data);
     let dataz =   Object.values(data)[0];
 
-    if(Object.values(dataz)[2] == 'nazan' && name !== 'nazan'){
+    if(Object.values(dataz)[2] != name ){
 
 
   var div = document.createElement('div');
 var span = document.createElement('span');
 var img = document.createElement('img');
 var p = document.createElement('p');
-  div.classList.add('container');
-      img.src = 'prof.png';
+div.classList.add('container');
+div.classList.add('egg');
+img.src = 'prof.png';
       span.textContent = Object.values(dataz)[2];
       p.textContent = Object.values(dataz)[0];
      document.getElementsByTagName('body')[0].appendChild(div);
@@ -88,18 +77,7 @@ var p = document.createElement('p');
      div.appendChild(img);
      div.appendChild(p);
             
-}else if(Object.values(dataz)[2] == 'turgut' && name !== 'turgut'){
-  var div = document.createElement('div');
-var span = document.createElement('span');
-var img = document.createElement('img');
-var p = document.createElement('p');
-  div.classList.add('container');
-      img.src = 'prof.png';
-      span.textContent = Object.values(dataz)[2];
-      p.textContent = Object.values(dataz)[0];
-     document.getElementsByTagName('body')[0].appendChild(div);
-     div.appendChild(span);
-     div.appendChild(img);
-     div.appendChild(p);
-           } 
-   });
+} });
+
+   export {name, submit};
+   

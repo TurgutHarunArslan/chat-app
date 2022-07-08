@@ -6,32 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatting Platform</title>
 <script src="firebase.js" type="module"></script>
-<link rel="stylesheet" href="style.css">
-    <style>
-body{
-margin: 0;
-padding: 0;
-overflow-x: hidden;
-box-sizing: content-box;
-}
-.tweet2{
-margin-left: 80vw;
-}
-p{
-    max-width:240px;
-}
+
+    <style id="idst">
+.egg, .container{
+  display: none;
+} 
 </style>
+  <link rel="stylesheet" href="style.css">
 <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js" type="module"></script>
+
 </head>
 <body>
-    <div style="margin-left: 40%;   position: -webkit-sticky; position: sticky;  top: 0;">
+
+    <div style="margin-left: 40%;   position: -webkit-sticky; position: sticky;  top: 0;" class="egg">
     <textarea id="tweet" style="height:60px; display: inline-flex; width: 250px; resize: none;"></textarea>
     <button id="TweetButton" style="  margin-bottom: 50px; position: absolute; padding: 24px;">Gönder</button>
-    <button id="ColorChange" style=" margin-bottom: 50px; position: absolute; padding: 24px; margin-left: 96px;" onclick="getRandomColor()">Change Color</button>
 </div>
 
+<form style="border:1px solid #ccc" onsubmit="event.preventDefault()">
+    <div class="containerz" >
+      <h1>Chat Yapabilmek için isim gir</h1>
+      <hr>
+  
+      <label for="name" ><b>Name</b></label>
+      <input type="text" placeholder="isim gir" name="name"  id="name" required>
 
-
+  
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Devam Et</button>
+      </div>
+    </div>
+  </form>
 
 <!-- 
  <div class="container">
@@ -44,5 +49,8 @@ p{
 
 <script src="main.js" type="module"></script>
 <script src="loadms.js" type="module"></script>
+<!-- <script src="log.js" type="module"></script> -->
+
 </body>
 </html>
+
