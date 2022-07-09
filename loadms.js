@@ -12,7 +12,7 @@ import {getDatabase, ref, onValue, child} from "https://www.gstatic.com/firebase
       let valz =  Object.values(datas)[i];
       Object.values(valz)[0];
 console.log(Object.values(valz)[3]);
-if (typeof Object.values(valz)[3] === 'undefined') {
+if (Object.values(valz)[3] === 'undefined') {
   var div = document.createElement('div');
   var span = document.createElement('span');
   var img = document.createElement('img');
