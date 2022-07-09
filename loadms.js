@@ -11,20 +11,23 @@ import {getDatabase, ref, onValue, child} from "https://www.gstatic.com/firebase
   for(let i = 0; i <  Object.values(datas).length; i++){
       let valz =  Object.values(datas)[i];
       Object.values(valz)[0];
+console.log(Object.values(valz)[3]);
+if (typeof Object.values(valz)[3] === 'undefined') {
+  var div = document.createElement('div');
+  var span = document.createElement('span');
+  var img = document.createElement('img');
+  var p = document.createElement('p');
+  div.classList.add('container');
+  div.classList.add('egg');
+    img.src = 'prof.png';
+    span.textContent = Object.values(valz)[2];
+    p.textContent = Object.values(valz)[0];
+   document.getElementsByTagName('body')[0].appendChild(div);
+   div.appendChild(span);
+   div.appendChild(img);
+   div.appendChild(p);
+}
 
-      var div = document.createElement('div');
-      var span = document.createElement('span');
-      var img = document.createElement('img');
-      var p = document.createElement('p');
-      div.classList.add('container');
-      div.classList.add('egg');
-        img.src = 'prof.png';
-        span.textContent = Object.values(valz)[2];
-        p.textContent = Object.values(valz)[0];
-       document.getElementsByTagName('body')[0].appendChild(div);
-       div.appendChild(span);
-       div.appendChild(img);
-       div.appendChild(p);
  {
 setTimeout(() => {
   listener();
