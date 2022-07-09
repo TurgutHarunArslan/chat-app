@@ -60,7 +60,7 @@ div.classList.add('egg');
     let data = snapshot.val();
     let dataz =   Object.values(data)[0];
 
-    if(Object.values(dataz)[2] != name ){
+    if(Object.values(dataz)[2] != name && Object.values(dataz)[3] == 'undefined'){
 
 
   var div = document.createElement('div');
