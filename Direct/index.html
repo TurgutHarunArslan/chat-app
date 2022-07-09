@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting Platform</title>
+<script src="firebase.js" type="module"></script>
+
+    <style id="idst">
+.egg, .container{
+  display: none;
+} 
+</style>
+  <link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js" type="module"></script>
+
+</head>
+<body>
+
+    <div style="margin-left: 40%;   position: -webkit-sticky; position: sticky;  top: 0;" class="egg">
+    <textarea id="tweet" style="height:60px; display: inline-flex; width: 250px; resize: none;"></textarea>
+    <button id="TweetButton" style="  margin-bottom: 50px; position: absolute; padding: 24px;">Gönder</button>
+</div>
+
+<form style="border:1px solid #ccc" onsubmit="event.preventDefault()">
+    <div class="containerz" >
+      <h1>Chat Yapabilmek için isim gir</h1>
+      <hr>
+  
+      <label for="name" ><b>Name</b></label>
+      <input type="text" placeholder="isim gir" name="name"  id="name"  required onkeyup="this.value = this.value.toLowerCase();">
+
+      <label for="Who" ><b>Kimle Konuşucaksiniz O kişinin ismini girin (o kişi'de sizin isminizi yazmali)</b></label>
+      <input type="text" placeholder="2.kişi gir" name="Who"  id="who" required onkeyup="this.value = this.value.toLowerCase();">
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Devam Et</button>
+      </div>
+    </div>
+  </form>
+
+<!-- 
+ <div class="container">
+    <span>Name</span>
+  <img src="prof.png" alt="Avatar" style="width:100%;">
+  <p>Hello. How are you today?</p>
+  <span class="time-right">11:00</span>
+</div>  -->
+
+
+<script src="main.js" type="module"></script>
+<script src="loadms.js" type="module"></script>
+<!-- <script src="log.js" type="module"></script> -->
+
+</body>
+</html>
+
