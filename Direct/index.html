@@ -25,11 +25,14 @@
 
 <form style="border:1px solid #ccc" onsubmit="event.preventDefault()">
     <div class="containerz" >
-      <h1>Chat Yapabilmek için isim gir</h1>
+      <h1>Kayıt ol / Giriş yap</h1>
       <hr>
   
-      <label for="name" ><b>Name</b></label>
+      <label for="name" ><b>isim</b></label>
       <input type="text" placeholder="isim gir" name="name"  id="name"  required onkeyup="this.value = this.value.toLowerCase();">
+
+      <label for="password" ><b>Şifre</b></label>
+      <input type="password" placeholder="şifre gir" name="password"  id="password" required>
 
       <label for="Who" ><b>Kimle Konuşucaksiniz O kişinin ismini girin (o kişi'de sizin isminizi yazmali)</b></label>
       <input type="text" placeholder="2.kişi gir" name="Who"  id="who" required onkeyup="this.value = this.value.toLowerCase();">
@@ -49,9 +52,9 @@
 </div>  -->
 
 
-<script src="main.js" type="module"></script>
-<script src="loadms.js" type="module"></script>
-<!-- <script src="log.js" type="module"></script> -->
+<script src="log.js" type="module" ></script>
+<script  type="module" id="1"></script>
+<script src="loadms.js" type="module" id="2"></script>
 
 </body>
 </html>

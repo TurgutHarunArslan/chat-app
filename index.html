@@ -25,14 +25,16 @@
 
 <form style="border:1px solid #ccc" onsubmit="event.preventDefault()">
     <div class="containerz" >
-      <h1>Herkezle Chat Yapabilmek için isim gir(butun herkez mesajlarını görebilicek)</h1>
+      <h1>Kayıt ol / Giriş yap(public mesajlayşma)</h1>
       <hr>
      <a href='Direct/index.html'>Özel mesajlaşmak için</a>
  <hr>
-      <label for="name" ><b>Name</b></label>
+      <label for="name" ><b>isim</b></label>
       <input type="text" placeholder="isim gir" name="name"  id="name" required>
 
-  
+      <label for="password" ><b>şifre</b></label>
+      <input type="password" placeholder="şifre gir" name="password"  id="password" required>
+
       <div class="clearfix">
         <button type="submit" class="signupbtn">Devam Et</button>
       </div>
@@ -50,8 +52,7 @@
 
 <script src="main.js" type="module"></script>
 <script src="loadms.js" type="module"></script>
-<!-- <script src="log.js" type="module"></script> -->
-
+<script src="log.js" type="module"></script>
 </body>
 </html>
 
