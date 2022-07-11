@@ -1,7 +1,7 @@
 # chat-app
-#Faq
-How signup?
-<hr>
-Use The Form
+# Faq
+Q How signup?
+A Use The Form
+
 # Prewiew
 <img src='show.gif'/>
