@@ -49,6 +49,7 @@ const user = query(ref(db, "users"), orderByChild("username"), equalTo(name.valu
     
  if (usz == name.value && usp == password.value) {
 document.getElementById('1').src = 'main.js';
+       document.getElementById('2').src = "loadms.js";
 logged = true
        console.log('giriş yapdiniz');
      document.querySelector('form').style.display = 'none';
@@ -63,6 +64,7 @@ logged = true
 
   } else {
     logged = true;
+      document.getElementById('1').src = 'main.js';
   document.getElementById('2').src = "loadms.js";
      console.log('hesabiniz oluşturulmuştur');
     writeUserData(name.value, password.value);
