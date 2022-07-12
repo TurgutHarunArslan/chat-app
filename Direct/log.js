@@ -48,8 +48,10 @@ const user = query(ref(db, "users"), orderByChild("username"), equalTo(name.valu
     if (name.value.length > 0 || password.length > 0) {
     
  if (usz == name.value && usp == password.value) {
-document.getElementById('1').src = 'main.js';
+
 logged = true
+document.getElementById('1').src = 'main.js';
+document.getElementById('2').src = "loadms.js";
        console.log('giriş yapdiniz');
      document.querySelector('form').style.display = 'none';
      document.getElementById('idst').remove();
@@ -63,7 +65,8 @@ logged = true
 
   } else {
     logged = true;
-  document.getElementById('2').src = "loadms.js";
+    document.getElementById('1').src = 'main.js';
+    document.getElementById('2').src = "loadms.js";
      console.log('hesabiniz oluşturulmuştur');
     writeUserData(name.value, password.value);
      document.querySelector('form').style.display = 'none';
