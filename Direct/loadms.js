@@ -10,8 +10,6 @@ if(logged == true){
   const datas = snapshot.val();
   for(let i = 0; i <  Object.values(datas).length; i++){
       let valz =  Object.values(datas)[i];
-   console.log('3', Object.values(valz)[3]);
-   console.log('2', Object.values(valz)[2]);
 
  if (Object.values(valz)[2] == who.value && Object.values(valz)[3] == name.value) {
 
